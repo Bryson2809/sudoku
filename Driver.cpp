@@ -1,3 +1,9 @@
+/*	Author: Bryson Carroll
+	Date: 9/21/2021
+	Email: Bryson2809@gmail.com
+	Purpose: Runs functions from Board.cpp to make sudoku playable
+*/
+
 #include <iostream>
 #include <cstdlib>
 #include <string>
