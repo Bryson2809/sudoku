@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <string>
+#include <time.h>
 
 using namespace std;
 
@@ -17,8 +18,7 @@ public:
 		{3,1,0,9,7,0,2,0,0},
 		{0,0,9,1,8,2,0,0,3},
 		{0,0,0,0,6,0,1,0,0}
-};
-
+	};
 	Board()
 	{
 		
@@ -44,12 +44,23 @@ public:
 						cout << this->nums[i][j] << " ";
 				}
 					
-				else if ((j + 1) % 3 == 0)
+				else //if ((j + 1) % 3 == 0)
 				{
 					if (j == 8)
-						cout << this->nums[i][j];
+					{
+						if (this->nums[i][j] == 0)
+							cout << "x";
+						else
+							cout << this->nums[i][j];
+					}
+					
 					else
-						cout << this->nums[i][j] << " | ";
+					{
+						if (this->nums[i][j] == 0)
+							cout << "x | ";
+						else
+							cout << this->nums[i][j] << " | ";
+					}
 				}
 			}
 			if ((i + 1) % 3 != 0)
@@ -58,5 +69,10 @@ public:
 				cout << "\n" << "-------------------------" << endl;
 		}
 		cout << endl;
+	}
+
+	void randBoard()
+	{
+		//srand
 	}
 };

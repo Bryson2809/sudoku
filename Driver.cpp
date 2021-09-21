@@ -2,6 +2,7 @@
 #include <cstdlib>
 #include <string>
 #include "Board.cpp"
+#include <time.h>
 
 using namespace std;
 
