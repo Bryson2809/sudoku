@@ -251,4 +251,35 @@ public:
 			break;
 		}
 	}
+
+	void solve()
+	{
+		
+	}
+
+private:
+	bool check_row = false;
+	bool check_column = false;
+	bool check_box = false;
+	bool check_board = false;
+
+	void checkRow(int row_num)
+	{
+
+	}
+
+	void checkColumn(int column_num)
+	{
+
+	}
+
+	void checkBox(int row_index, int column_index)
+	{
+
+	}
+
+	bool check_board()
+	{
+
+	}
 };
