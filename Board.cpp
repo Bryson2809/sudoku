@@ -290,6 +290,16 @@ private:
 		this->check_row = true;
 	}
 
+	bool checkAllRows()
+	{
+		for (int int i = 0; i < COLUMN_SIZE i++)
+		{
+			this->checkRow(i);
+			if (this.check_row == false) break;
+		}
+		return this->check_row;
+	}
+
 	void checkColumn(int column_num)
 	{
 		for (int i = 0; i < COLUMN_SIZE i++)
@@ -309,13 +319,29 @@ private:
 		this->check_column = true;
 	}
 
+	bool checkAllColumns()
+	{
+		for (int i = 0; i < ROW_SIZE; i++)
+		{
+			this->checkColumn(i);
+			if (this->check_column == false) break;
+		}
+		return this->check_column;
+	}
+
 	void checkBox(int row_index, int column_index)
 	{
 
 	}
 
-	bool checkboard()
+	bool checkAllBoxes()
 	{
 		return false;
+	}
+
+	bool checkboard()
+	{
+		this->check_board = this->checkAllBoxes() && this->checkAllColumns() && this->checkAllRows();
+		return check_board;
 	}
 };
