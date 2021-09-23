@@ -258,19 +258,55 @@ public:
 	}
 
 private:
-	bool check_row = false;
-	bool check_column = false;
-	bool check_box = false;
-	bool check_board = false;
+	bool check_row;
+	bool check_column;
+	bool check_box;
+	bool check_board;
+
+	int incorrect_row_index_1;
+	int incorrect_column_index_1;
+	int incorrect_row_index_2;
+	int incorrect_column_index_2;
+
+	const int ROW_SIZE = 9;
+	const int COLUMN_SIZE = 9;
 
 	void checkRow(int row_num)
 	{
-
+		for (int i = 0; i < ROW_SIZE; i++)
+		{
+			for (int j = (i + 1); j < ROW_SIZE; j++)
+			{
+				if (finalBoard[row_num][i] == finalBoard[row_num][j])
+				{
+					this->check_row = false;
+					this->incorrect_row_index_1 = this->incorrect_row_index_2 = row_num;
+					this->incorrect_column_index_1 = i;
+					this->incorrect_column_index_2 = j;
+					return;
+				}
+			}
+		}
+		this->check_row = true;
 	}
 
 	void checkColumn(int column_num)
 	{
-
+		for (int i = 0; i < COLUMN_SIZE i++)
+		{
+			for (int j = (i + 1); j < COLUMN_SIZE; j++)
+			{
+				if (finalBoard[i][column_num] == finalBoard[j][column_num])
+				{
+					this->check_column = false;
+					this->incorrect_column_index_1 = this->incorrect_column_index_2 = column_num;
+					this->incorrect_row_index_1 = i;
+					this->incorrect_row_index_2 = j;
+					return;
+				}
+			}
+		}
+		this->check_column = true;
 	}
 
 	void checkBox(int row_index, int column_index)
@@ -278,8 +314,8 @@ private:
 
 	}
 
-	bool check_board()
+	bool checkboard()
 	{
-
+		return false;
 	}
 };
